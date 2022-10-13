@@ -8,9 +8,9 @@ class Contenedor {
     async save(products) {
         try {
             const productos = await this.getAll();
-            producto.id = productos.length + 1;
-            productos.push(producto);
-            await fs.promises.writeFile(this.archivo, JSON.stringify(productos, null, 2));
+            producto.id = products.length + 1;
+            products.push(producto);
+            await fs.promises.writeFile(this.archivo, JSON.stringify(products, null, 2));
             return producto.id;
         } catch (error) {
             console.log('Error en save: ', error);
@@ -19,8 +19,8 @@ class Contenedor {
  
     async getById(id) {
         try {
-            const productos = await this.getAll();
-            const producto = productos.find((producto) => producto.id === id);
+            const products = await this.getAll();
+            const producto = products.find((producto) => producto.id === id);
             return producto;
         } catch (error) {
             console.log('Error en getById: ', error);
