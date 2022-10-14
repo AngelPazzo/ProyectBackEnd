@@ -1,29 +1,32 @@
-const fs = require('fs');
- 
+const fs = require(`fs`)
+
 class Contenedor {
-    constructor(archivo) {
-        this.archivo = archivo;
+    constructor(name){
+        this.name = name
     }
- 
-    async save(products) {
-        try {
-            const productos = await this.getAll();
-            producto.id = products.length + 1;
-            products.push(producto);
-            await fs.promises.writeFile(this.archivo, JSON.stringify(products, null, 2));
-            return producto.id;
-        } catch (error) {
-            console.log('Error en save: ', error);
+    save (producto){
+        const products = fs.readFileSync(`${this.name}.txt`, `utf-8`)
+        const parsedProducts = JSON.parse(products)
+        if(oarsedProducts.length == 0){
+            Object.assign(product, {
+                id:1
+            })
+            parsedProducts.push(producto)
+            fs.writeFileSync(JSON.stringify(parsedProducts, null, 2))
+            return 1
+        } else{
+            parsedProducs.forEach(
+                
+            });
         }
-    }
- 
-    async getById(id) {
-        try {
-            const products = await this.getAll();
-            const producto = products.find((producto) => producto.id === id);
-            return producto;
-        } catch (error) {
-            console.log('Error en getById: ', error);
-        }
+
     }
 }
+
+const container = ner Contenedor (`products`)
+
+console.log(container.save({
+    name: "Bicicleta"
+    price: 33000
+
+}))
