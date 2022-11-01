@@ -7,6 +7,6 @@ app.use (express.json());
 app.use (express.urlencoded({extended: true}));
 app.use (`/public`, express.static(__dirname + "/public/form/"));
 
-app.use (`/api`, indexRouter);
+app.use (`/`, indexRouter);
 
 module.exports = app;

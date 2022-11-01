@@ -48,18 +48,19 @@ router.get("/:id", (req, res) => {
 
 
 
-router.post("/", (req, res) => {
-    try {
-        const product = {
-            ...req.body, id: products.length + 1
-        };
-        products.push(product);
-        res.redirect(`/public/form/index.html`);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-});
-        
+ router.post("/", (req, res) => {
+     try {
+         const product = {
+             ...req.body, id: products.length + 1
+         };
+         products.push(product);
+         res.redirect("public/index.html");
+     } catch (error) {
+         res.status(500).json({ message: error.message });
+     }
+ });
+
+   
 router.put("/:id", (req, res) => {
     try {
         const product = products.find((p) => p.id === parseInt(req.params.id));
