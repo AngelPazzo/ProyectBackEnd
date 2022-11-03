@@ -1,4 +1,8 @@
-const products = []
+const products = [{
+    name : "Tablita",
+    price : 10000,
+    image : "https://cdn3.iconfinder.com/data/icons/lifestyle-entertainment-vol-1/512/surf_surfing_surfboard_sports-64.png "
+}]
 
 class ProductsService{
     constructor(){}
