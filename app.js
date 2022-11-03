@@ -26,9 +26,9 @@ app.get (`/`, (_req , res) => {
 });
 
 app.post (`/products`, (req, res) => {
-    const {name, price, description} = req.body;
+    const {name, price, image} = req.body;
     const productsService = new ProductsService();
-    productsService.postProduct({name, price, description});
+    productsService.postProduct({name, price, image});
     res.redirect (`/`);
 });
 
