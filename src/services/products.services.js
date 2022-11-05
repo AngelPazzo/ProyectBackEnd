@@ -1,12 +1,11 @@
 const products = [
-//     {
-//     name : "Tablita",
-//     price : 10000,
-//     image : "https://cdn3.iconfinder.com/data/icons/lifestyle-entertainment-vol-1/512/surf_surfing_surfboard_sports-64.png "
-// }
+     {
+     name : "Tablita",
+     price : 10000,
+     image : "https://cdn3.iconfinder.com/data/icons/lifestyle-entertainment-vol-1/512/surf_surfing_surfboard_sports-64.png "
+ }
 ]
 
-//descomentar para probar que se muestre el producto en la pagina!
 
 class ProductsService{
     constructor(){}

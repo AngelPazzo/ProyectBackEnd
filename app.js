@@ -1,6 +1,7 @@
 const express = require('express');
 // const indexRouter = require(`./src/routes/index.js`);
 require (`dotenv`).config();
+let fs = require(`fs`);
 const app = express();
 const ProductsService = require(`./src/services/products.services.js`);
 
