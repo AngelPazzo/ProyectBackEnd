@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const products = require(`./products/products.router`);
+const products = require(`./endpoints.js`);
 
 router.get("/health", (_req, res) => {
     res.status(200).json({ 
@@ -10,6 +10,6 @@ router.get("/health", (_req, res) => {
     });
 });
 
-router.use(`/products`, products);
+router.use(`/`, products);
 
 module.exports = router;
