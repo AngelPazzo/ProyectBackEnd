@@ -1,18 +1,15 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const productsRoutes = require(`./products/products.routes.js`);
-// const products = require(`./endpoints.js`);
+const products = require("./products/products.routes");
 
-router.get("/health", async (_req, res) => {
-    res.status(200).json({ 
-        success: true,
-        environment: process.env.ENVIRONMENT || "undefined",
-        health: "OK"
-    });
+//status
+router.get("/health", (_req, res) => {
+  res.status(200).json({
+    message: "Server is up and running",
+    environment: process.env.ENV || "development",
+  });
 });
 
-router.use(`/products`, productsRoutes);
-
-// router.use(`/`, products);
+router.use("/", products);
 
 module.exports = router;

@@ -1,31 +1,25 @@
-// const express = require('express');
-// require (`dotenv`).config();
-// const app = express();
-// const PORT = process.env.PORT || 3003;
+const app = require("./app");
+const { Server: HttpServer } = require("http");
+const { Server: IoServer } = require("socket.io");
+require("dotenv").config();
 
-// const Contenedor = require(`./tp2.js`);
-// const contenedor = new Contenedor("productos.txt");
+const PORT = process.env.PORT || 3000;
 
-// app.use (express.json());
-// app.use (express.urlencoded({extended: true}));
+const http = new HttpServer(app);
+const io = new IoServer(http);
 
-// app.get (`/productos`, async (_req, res) => {
-//     const productos = await contenedor.getAll();
-//     res.status(200).json(productos);
-// }
-// );
+let messages = [];
 
-// app.get ("/productos-random", async (_req, res) => {
-//     const productos = await contenedor.getAll();
-//     let random = Math.floor(Math.random()*productos.length);
-//     res.status(200).json(productos[random]);
-// }
-// )
+io.on("connection", (socket) => {
+  console.log("a user connected");
+  socket.emit("update-messages", messages);
+  socket.on("new-message", (message) => {
+    messages.push(message);
+    io.emit("messages", messages);
+    io.sockets.emit("new-messages-from-server", message);
+  });
+});
 
-
-
-
-
-// app.listen (PORT, ()=> {
-//     console.log (`Servidor escuchando en el puerto ${PORT}`);
-// });
+http.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
