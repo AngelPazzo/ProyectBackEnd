@@ -9,19 +9,19 @@ ul li {
 }
 
 .date {
-    color: rgb(175, 149, 149);
+    color: brown;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 300
 }
 
 .username {
-    color: rgb(18, 235, 134);
+    color: blue;
     font-weight: bold;
     font-size: 1rem;
 }
 
 .message {
-    color: rgb(128, 0, 0);
+    color: green;
     font-style: italic;
     font-size: 1rem;
 }

@@ -2,15 +2,17 @@
 //Comentar los ejemplos para visualizar el alert del error.
 let products = [
   {
-    name: "Cd de musica",
-    price: 10,
-    thumbnail:"https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/spotify-512.png"  },
+    name: "Bitcoin",
+    price: 20000,
+    thumbnail:
+      "https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/bitcoincash_bch_bitcoin-64.png",
+  },
   {
-    name: "Cd de musica",
-    price: 100,
-    thumbnail:"https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/spotify-512.png"  },
-    
-  ];
+    name: "Ethereum",
+    price: 1500,
+    thumbnail:"https://cdn4.iconfinder.com/data/icons/crypto-currency-and-coin-2/256/etherium_eth_ethcoin_crypto-64.png"
+  }
+];
 
 //class de productos
 class Products {
